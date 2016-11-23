@@ -1,0 +1,27 @@
+{
+  "name": "vue-typescript",
+  "version": "1.0.0",
+  "description": "Starter project with Vue.js and Typescript",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "= <agrbicpp@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^2.0.10",
+    "vue": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "babel": "^6.5.2",
+    "babel-core": "^6.18.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.2.0",
+    "ts-loader": "^1.2.2",
+    "webpack": "^1.13.3"
+  }
+}
