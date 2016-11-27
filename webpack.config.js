@@ -7,12 +7,8 @@ module.exports = {
 	},
 
 	resolve: {
-		// Add '.ts' and '.tsx' as a resolvable extension.
 		extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
 
-		// By default, the NPM package exports the runtime-only build. To use the standalone build, add the following alias to your Webpack config:
-		// https://vuejs.org/v2/guide/installation.html
-		
 		alias: {
 			'vue$': 'vue/dist/vue.js'
 		}
@@ -23,19 +19,22 @@ module.exports = {
 			loader: 'tslint-loader'
 		}],
 
-		loaders: [
-			// It's important to run 'babel' first this will avoid a compilation error
-			{
-				test: /\.tsx?$/,
-				loader: "babel"
-			},
-			// Run ts loader to transform our typescript into JS
-			{
-				test: /\.tsx?$/,
-				exclude: /node_modules/,
-				loader: "ts-loader"
-			}
-		]
+		loaders: [{
+			test: /\.vue$/,
+			loader: 'vue'
+		}, {
+			test: /\.tsx?$/,
+			loader: 'vue-ts'
+		}]
+	},
+
+	vue: {
+		// instruct vue-loader to load TypeScript
+		loaders: {
+			js: 'vue-ts-loader',
+		},
+		// make TS' generated code cooperate with vue-loader
+		esModule: true
 	},
 
 	tslint: tslint_config,

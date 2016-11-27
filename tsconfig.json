@@ -6,7 +6,10 @@
 		"moduleResolution": "node",
 		"outDir": "dist/",
 		"sourceMap": true,
-		"removeComments": true
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true
+		
 	},
 
 	"exclude": [
@@ -14,8 +17,7 @@
 	],
 
 	"include": [
-		"src/**/*",
-		"test/**/*"
+		"src/**/*"
 	],
 
 	"files": [

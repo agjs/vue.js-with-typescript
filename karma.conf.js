@@ -8,23 +8,33 @@ module.exports = function (config) {
 
 		exclude: [],
 		preprocessors: {
-			'test/**/*.tsx': ['webpack']
+			'test/**/*.spec.tsx': ['webpack']
 		},
 
 		webpack: {
 			module: {
 				loaders: [{
+					test: /\.vue$/,
+					loader: 'vue'
+				}, {
 					test: /\.tsx?$/,
-					exclude: /node_modules/,
-					loader: 'ts-loader'
+					loader: 'vue-ts'
 				}]
 			},
+
+			vue: {
+				loaders: {
+					js: 'vue-ts-loader',
+				},
+				esModule: true
+			},
+
 			resolve: {
 				extensions: ['.ts', '.js', '.tsx', '.jsx', '']
-			}
+			},
 		},
 
-		reporters: ['verbose'],
+		reporters: ['verbose', 'progress'],
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,
